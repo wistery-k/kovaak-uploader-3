@@ -15,7 +15,8 @@ def read_score(path):
     with(open(path)) as f:
         s = ''.join(f.readlines())
         m = re.search(score_pattern, s)
-        return m[1]
+        score = float(m[1])
+        return "{:.2f}".format(score)
 
 
 kovaak_dir = "/mnt/c/Program Files (x86)/Steam/steamapps/common/FPSAimTrainer/FPSAimTrainer/stats/"
